@@ -29,6 +29,8 @@ const upload = multer({ storage });
 
 let pendingRequests = {};
 
+// j
+
 server.on('upgrade', (request, socket, head) => {
   wss.handleUpgrade(request, socket, head, (ws) => {
     wss.emit('connection', ws, request);
@@ -50,6 +52,12 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS,
   },
 });
+
+
+app.get('/apii/hello', (req, res) => {
+  res.json({ message: 'Hello, World!' });
+});
+
 
 // API endpoint to handle form submissions
 app.post('/send-email/front', (req, res) => {
