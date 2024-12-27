@@ -16,7 +16,7 @@ const port = 5001;
 // Create an HTTP server
 
 const server = http.createServer(app);
-const wss = new WebSocket.Server({port: 5003});
+const wss = new WebSocket.Server({port: 5300});
 const clients = new Map();
 
 // Sample
