@@ -15,13 +15,17 @@ const port = 5001;
 
 // Create an HTTP server
 const server = http.createServer(app);
-const wss = new WebSocket.Server({port: 5000});
+const wss = new WebSocket.Server({port: 5003});
 const clients = new Map();
 
 // Sample
 // Configure CORS
 app.use(cors());
 app.use(express.json());
+
+console.log("Email User:", process.env.EMAIL_USER);
+console.log("Email Pass:", process.env.EMAIL_PASS);
+
 
 // Configure Multer for file uploads
 const storage = multer.memoryStorage();
@@ -61,6 +65,7 @@ app.get('/apii/hello', (req, res) => {
 
 // API endpoint to handle form submissions
 app.post('/send-email/front', (req, res) => {
+  
   const { name, mobile, email,formType } = req.body;
   console.log("name",name,"email",email,"formtype",formType);
   
