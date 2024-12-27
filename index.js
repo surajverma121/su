@@ -14,18 +14,20 @@ const app = express();
 const port = 5001;
 
 // Create an HTTP server
+
 const server = http.createServer(app);
 const wss = new WebSocket.Server({port: 5003});
 const clients = new Map();
 
 // Sample
 // Configure CORS
+
 app.use(cors());
+
 app.use(express.json());
 
 console.log("Email User:", process.env.EMAIL_USER);
 console.log("Email Pass:", process.env.EMAIL_PASS);
-
 
 // Configure Multer for file uploads
 const storage = multer.memoryStorage();
