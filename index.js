@@ -27,6 +27,7 @@ app.use(cors());
 app.use(express.json());
 
 console.log("Email User:", process.env.EMAIL_USER);
+
 console.log("Email Pass:", process.env.EMAIL_PASS);
 
 // Configure Multer for file uploads
