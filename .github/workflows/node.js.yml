@@ -33,3 +33,5 @@ jobs:
       run: |
             echo "EMAIL_USER=${{ secrets.EMAIL_USER }}" >> .env
             echo "EMAIL_PASS=${{ secrets.EMAIL_PASS }}" >> .env
+                 echo "port=5002" >> .env    
+            echo "ws"=5003" >> .env
