@@ -11,7 +11,7 @@ require('dotenv').config();
 const WebSocket = require('ws');
 
 const app = express();
-const port = 5001;
+const port = 5002;
 
 // Create an HTTP server
 
@@ -80,7 +80,9 @@ app.post('/send-email/front', (req, res) => {
   // Email options
   const mailOptions = {
     from: email,
-    to: 'blackgrapes.arpinjain@gmail.com', // Replace with your recipient email
+    // to: 'blackgrapes.arpinjain@gmail.com', // Replace with your recipient email
+    to: 'Surajverma7049214132@gmail.com', // Replace with your recipient email
+
     subject: 'New Meeting Registration',
     text: `Form Type: ${formType}\nName: ${name}\nMobile: ${mobile}\nEmail: ${email}`
   };
@@ -132,7 +134,9 @@ app.post('/send-email', upload.fields([
 
   const mailOptions = {
     from: email,
-    to: 'blackgrapes.arpinjain@gmail.com', // Replace with your recipient email
+    // to: 'blackgrapes.arpinjain@gmail.com', // Replace with your recipient email
+    to: 'Surajverma7049214132@gmail.com', // Replace with your recipient email
+
     subject: 'Registration Form Submission',
     html: `
     <p>
