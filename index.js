@@ -15,10 +15,10 @@ const port = 5001;
 
 // Create an HTTP server
 
-// const server = http.createServer(app);
-const server = http.createServer(app).listen(port, '0.0.0.0', () => {
-  console.log(`Server running on port ${port}`);
-});
+const server = http.createServer(app);
+// const server = http.createServer(app).listen(port, '0.0.0.0', () => {
+//   console.log(`Server running on port ${port}`);
+// });
 
 const wss = new WebSocket.Server({port: 5300});
 const clients = new Map();
@@ -324,6 +324,10 @@ app.post('/status', async (req, res) => {
   });
 });
 
-app.listen(port, () => {
+// app.listen(port, () => {
+//   console.log(`Server running on port ${port}`);
+// });
+
+server.listen(port, '0.0.0.0', () => {
   console.log(`Server running on port ${port}`);
-});
+})
